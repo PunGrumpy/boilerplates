@@ -5,12 +5,12 @@ services:
     container_name: prometheus
     ports:
       - 9090:9090
-    command: '--config.file=/etc/prometheus/prometheus.yml'
     volumes:
-      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./data:/prometheus
+      - ./config:/etc/prometheus
+      - ./prometheus-data:/prometheus
+    command: '--config.file=/etc/prometheus/prometheus.yml'
     restart: unless-stopped
 
 volumes:
-  prometheus_data:
+  prometheus-data:
     driver: local
