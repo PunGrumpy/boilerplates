@@ -9,18 +9,4 @@ services:
       - 8080:8080 # Dashboard
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./config/traefik.yml:/etc/traefik.yml
-
-  whoami:
-    image: containous/whoami
-    container_name: whoami
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.whoami.rule=Host(`whoami.localhost`)
-      - traefik.http.routers.whoami.entrypoints=web
-      - traefik.http.routers.whoami.middlewares=whoa
-      - traefik.http.middlewares.whoa.headers.customrequestheaders.X-Forwarded-Proto=https
-      - traefik.http.middlewares.whoa.headers.customrequestheaders.X-Forwarded-Port=443
-      - traefik.http.middlewares.whoa.headers.customrequestheaders.X-Forwarded-Host=whoami.localhost
-      - traefik.http.middlewares.whoa.headers.customrequestheaders.X-Forwarded-Uri=https://whoami.localhost
-      - traefik.http.middlewares.whoa.headers.customrequestheaders.X-Forwarded-Method=GET
+      - ./config/:/etc/
