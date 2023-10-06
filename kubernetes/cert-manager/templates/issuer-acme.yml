@@ -25,27 +25,27 @@ spec:
     # Configuration DNS or HTTP Challenge
     # ---
     # DNS Challenge:
-    # - dns01:
+    - dns01:
         # Configuration DNS Provider
         # ---
-        # cloudflare:
-          # email: example@gmail
-        # API Key:
-          # apiKeySecretRef:
-            # name: cloudflare-api-key
-            # key: api-key
-        # --- or ----
-        # API Token:
+        cloudflare:
+          email: example@gmail.com
+          # API Key:
+          apiKeySecretRef:
+            name: cloudflare-api-key
+            key: api-key
+          # --- or ----
+          # API Token:
           # apiTokenSecretRef:
-            # name: cloudflare-api-token
-            # key: api-token
-        # (Optional) DNS selectors
+          #   name: cloudflare-api-token
+          #   key: api-token
+        # (Optional) DNS Selectors
         # ---
         # selector:
-          # dnsZone:
-            # - your-domain.com
+        #   dnsZone:
+        #     - your-domain.com
 
     # HTTP Challenge:
     # - http01:
-        # ingress:
-          # class: traefik
+    #     ingress:
+    #       class: traefik
