@@ -7,10 +7,10 @@ services:
       - 9090:9090
     volumes:
       - ./config:/etc/prometheus
-      - ./prometheus-data:/prometheus
+      - ./prometheus_data:/prometheus
     command: '--config.file=/etc/prometheus/prometheus.yml'
     restart: unless-stopped
 
 volumes:
-  prometheus-data:
+  prometheus_data:
     driver: local

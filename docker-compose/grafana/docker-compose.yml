@@ -6,9 +6,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - grafana-data:/var/lib/grafana
+      - grafana_data:/var/lib/grafana
     restart: unless-stopped
 
 volumes:
-  grafana-data:
+  grafana_data:
     driver: local
