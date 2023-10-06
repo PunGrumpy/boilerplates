@@ -2,25 +2,32 @@
     <h1>Cert Manager</h1>
 </div>
 
-## Installation
+## Deployment
 
-### Helm
+1. Add the Helm Repository
 
-```bash
-# Add Repository
-helm repo add jetstack https://charts.jetstack.io
+   ```bash
+   helm repo add jetstack https://charts.jetstack.io
+   ```
 
-# Update Repository
-helm repo update
+2. Update the Helm Repository
 
-# Install
-helm install cert-manager jetstack/cert-manager \
-    --namespace cert-manager \
-    --create-namespace \
-    --version v1.13.1 \
-    --set installCRDs=true
-```
+   ```bash
+   helm repo update
+   ```
 
-## Templates
+3. Install the Helm Chart
 
-[templates](templates/)
+   ```bash
+   helm install cert-manager jetstack/cert-manager \
+     --namespace cert-manager \
+     --version v1.13.1
+     --create-namespace \
+     --set installCRDs=true
+   ```
+
+## Configuration
+
+Add `Issuer` or `ClusterIssuer`, `Credential` and `Certificate` resources to the `cert-manager` namespace.
+
+For more information, see the [cert-manager documentation](https://cert-manager.io/docs/).
