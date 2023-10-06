@@ -29,7 +29,7 @@ spec:
             email: example@gmail.com
             # API Key:
             apiKeySecretRef:
-              name: cloudflare-api-key
+              name: cloudflare-api-key-secret
               key: api-key
             # --- or ---
             # API Token:

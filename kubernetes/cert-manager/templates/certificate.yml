@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: your-secret
   issuerRef:
-    name: letsencrypt-prod
+    name: ssl-issuer
     kind: ClusterIssuer
   dnsNames:
     - your.domain.com
