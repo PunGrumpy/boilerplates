@@ -20,6 +20,12 @@ services:
       - nginxproxymanager_data:/data
       - nginxproxymanager_ssl:/etc/letsencrypt
     restart: unless-stopped
+    depends_on:
+      - nginxproxymanager-db
+    healthcheck:
+      test: ['CMD', '/bin/check-health']
+      interval: 10s
+      timeout: 5s
 
   nginxproxymanager-db:
     image: jc21/mariadb-aria:latest
