@@ -6,6 +6,7 @@ volumes:
 services:
   nginxproxymanager:
     image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
     ports:
       - 80:80
       - 81:81
