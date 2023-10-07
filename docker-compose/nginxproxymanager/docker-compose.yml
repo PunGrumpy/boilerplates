@@ -30,6 +30,7 @@ services:
 
   nginxproxymanager-db:
     image: jc21/mariadb-aria:latest
+    container_name: nginx-proxy-manager-db
     environment:
       - MYSQL_ROOT_PASSWORD=npm
       - MYSQL_DATABASE=npm
