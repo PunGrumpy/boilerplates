@@ -19,6 +19,7 @@ services:
     volumes:
       - nginxproxymanager_data:/data
       - nginxproxymanager_ssl:/etc/letsencrypt
+    restart: unless-stopped
 
   nginxproxymanager-db:
     image: jc21/mariadb-aria:latest
@@ -29,3 +30,4 @@ services:
       - MYSQL_PASSWORD=npm
     volumes:
       - nginxproxymanager_db:/var/lib/mysql
+    restart: unless-stopped
