@@ -1,0 +1,15 @@
+version: '3'
+services:
+  portainer-agent:
+    image: portainer/agent:latest
+    container_name: portainer0agent
+    deploy:
+      mode: global
+    ports:
+      - 9001:9001
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+    networks:
+      - portainer-agent_network
+    restart: unless-stopped
