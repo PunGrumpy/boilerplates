@@ -2,7 +2,7 @@ version: '3'
 services:
   portainer-agent:
     image: portainer/agent:latest
-    container_name: portainer0agent
+    container_name: portainer-agent
     deploy:
       mode: global
     ports:
