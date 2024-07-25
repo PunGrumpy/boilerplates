@@ -1,6 +1,6 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-metdata:
+metadata:
   name: tf-pungrumpy
   namespace: tf-pungrumpy
   annotations:
