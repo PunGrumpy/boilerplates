@@ -1,0 +1,9 @@
+# You can read more about the values.yml file here: https://github.com/hashicorp/vault-helm/blob/main/values.yaml
+global:
+  enabled: false
+
+server:
+  enabled: true
+  dev:
+    enabled: true
+  logLevel: debug
