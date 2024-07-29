@@ -88,8 +88,8 @@ deployment:
           'sh',
           '-c',
           # 'touch /ssl-certs/acme-cloudflare.json; chmod -Rv 600 /ssl-certs/*'
-          # 'touch /ssl-certs/acme-generic.json chmod -Rv 600 /ssl-certs/*'
-          'touch /ssl-certs/acme-production.json chmod -Rv 600 /ssl-certs/*'
+          # 'touch /ssl-certs/acme-generic.json; chmod -Rv 600 /ssl-certs/*'
+          'touch /ssl-certs/acme-production.json; chmod -Rv 600 /ssl-certs/*'
         ]
       volumeMounts:
         - name: ssl-certs
