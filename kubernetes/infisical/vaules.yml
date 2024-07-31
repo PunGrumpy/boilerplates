@@ -1,0 +1,19 @@
+## Infisical configuration
+## Ref: https://infisical.com/docs/self-hosting/deployment-options/kubernetes-helm
+
+## Infisical Image Version
+infisical:
+  image:
+    repository: infisical/infisical
+    # -- By default, the Infisical version set in your helm chart will likely be outdated.
+    tag: 'v0.46.2-postgres'
+    pullPolicy: IfNotPresent
+
+## Configure Ingress
+ingress:
+  enabled: true
+  hostName: 'infisical.yourdomain.com'
+  ingressClassName: traefik | nginx
+  nginx:
+    # -- If you use Nginx Controller to direct traffic
+    enabled: false
