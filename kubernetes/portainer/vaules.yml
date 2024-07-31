@@ -10,4 +10,4 @@ service:
 
 tls:
   # If set, Portainer will be configured to use TLS only
-  force: true
+  force: true # If you want to use ingress set `false`
